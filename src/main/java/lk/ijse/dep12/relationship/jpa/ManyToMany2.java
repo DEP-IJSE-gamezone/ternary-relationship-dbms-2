@@ -50,9 +50,9 @@ public class ManyToMany2 {
                 System.out.println("4  ----------------------------------");
                 Student st1 = em.find(Student.class, "123456789V");
                 Student st2 = em.find(Student.class, "100456789V");
-                // st1.getContact();
+               //  st1.getContact();
                 //st1.getBatch();
-                //st1.getUser();
+
 
                 System.out.println("5 ----------------------------------");
 
