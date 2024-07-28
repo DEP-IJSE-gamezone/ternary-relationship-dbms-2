@@ -1,0 +1,11 @@
+# name :ternary-relationship-project-2
+services:
+  container:
+    image: mysql
+    network_mode: host
+    environment:
+      MYSQL_ROOT_PASSWORD: mysql
+      MYSQL_TCP_PORT: 15000
+    container_name: mysql_project_container
+    volumes:
+      - ~/project:/var/lib/mysql
