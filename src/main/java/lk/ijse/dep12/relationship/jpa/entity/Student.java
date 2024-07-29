@@ -18,12 +18,6 @@ public class Student  implements Serializable {
     private String name;
     private String address;
 
-    @JoinTable(name = "take",
-    joinColumns =@JoinColumn(name = "student_nic",referencedColumnName = "nic") ,
-    inverseJoinColumns = @JoinColumn(name = "module_code",referencedColumnName = "code"))
-    @ManyToOne
-    private Module module;
-
     @Setter(AccessLevel.NONE)
     @OneToMany(mappedBy = "student",cascade = {CascadeType.ALL})
     private List<Contact> contacts = new ArrayList<>();
@@ -34,12 +28,6 @@ public class Student  implements Serializable {
         this.address = address;
     }
 
-    public Student(String nic, String name, String address, Module module) {
-        this.nic = nic;
-        this.name = name;
-        this.address = address;
-        this.module = module;
-    }
 
     public Student(String nic, String name, String address, List<Contact> contacts) {
         if(contacts != null && !contacts.isEmpty()){

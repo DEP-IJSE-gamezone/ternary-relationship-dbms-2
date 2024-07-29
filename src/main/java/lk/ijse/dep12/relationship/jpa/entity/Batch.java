@@ -27,12 +27,6 @@ public class Batch implements Serializable {
     @OneToMany(mappedBy = "batch", cascade = CascadeType.PERSIST)
     private List<RegisteredBy> registeredByList = new ArrayList<>();
 
-    @ManyToOne
-    @JoinTable(name = "take",
-    joinColumns = @JoinColumn(name = "batch_id",referencedColumnName = "batchId"),
-    inverseJoinColumns = @JoinColumn(name = "module_code",referencedColumnName = "code"))
-    private Module module;
-
 
 
     public Batch(String batchId, String duration, Course course, BigDecimal fee) {
@@ -41,6 +35,7 @@ public class Batch implements Serializable {
         this.course = course;
         this.fee = fee;
     }
+
 
     public Batch(String batchId, String duration, Course course, BigDecimal fee, List<RegisteredBy> registeredByList) {
         if (registeredByList != null && !registeredByList.isEmpty()) {
@@ -65,6 +60,7 @@ public class Batch implements Serializable {
             throw new IllegalStateException("RegisteredByList is empty");
         }
     }
+
 
 
 }

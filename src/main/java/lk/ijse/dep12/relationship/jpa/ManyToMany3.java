@@ -18,7 +18,7 @@ public class ManyToMany3 {
                Contact contact = em.find(Contact.class, "091-1000908");
                System.out.println(contact.getStudent());
                Student st1 = em.find(Student.class, "123456789V");
-               //st1.getContact();
+               st1.getContacts();
 
 
                tx.commit();
